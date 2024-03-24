@@ -859,5 +859,13 @@ require('lazy').setup({
   },
 })
 
+-- return cursor to where it was last time closing the file
+vim.api.nvim_create_autocmd({ "BufReadPost" }, {
+  group = vim.api.nvim_create_augroup("userconfig", { clear = true }),
+  desc = "return cursor to where it was last time closing the file",
+  pattern = "*",
+  command = 'silent! normal! g`"zv',
+})
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
