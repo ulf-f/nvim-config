@@ -298,29 +298,23 @@ require("lazy").setup({
 	--  config = function() ... end
 
 	{ -- Useful plugin to show you pending keybinds.
-		"folke/which-key.nvim",
-		event = "VimEnter", -- Sets the loading event to 'VimEnter'
-		config = function() -- This is the function that runs, AFTER loading
-			require("which-key").setup()
-
-			-- Document existing key chains
-			require("which-key").add({
-				{ "<leader>c", desc = "[C]ode" },
-				{ "<leader>d", desc = "[D]ocument" },
-				{ "<leader>r", desc = "[R]ename" },
-				{ "<leader>s", desc = "[S]earch" },
-				{ "<leader>w", desc = "[W]orkspace" },
-				{ "<leader>t", desc = "[T]oggle" },
-				{ "<leader>h", desc = "Git [H]unk" },
-				{
-					mode = { "n", "v" },
-					{ "<leader>h", desc = "Git [H]unk" },
-					{ "<leader>q", "<cmd>q<cr>", desc = "Quit" },
-					{ "<leader>w", "<cmd>w<cr>", desc = "Write" },
-				},
-			})
-		end,
-	},
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    keys = {
+      {
+        "<leader>?",
+        function()
+          require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+      },
+    },
+  },
 
 	-- NOTE: Plugins can specify dependencies.
 	--
