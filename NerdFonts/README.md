@@ -4,7 +4,7 @@
 
     mkdir -p ~/.local/share/fonts/NerdFonts
 
-- Download _Hack Nerd Font_ from www.nerdfonts.com
+- Download _Hack Nerd Font_ from https://www.nerdfonts.com/font-downloads
 - Unzip Hack.zip
 
 ## Copy all font files over
