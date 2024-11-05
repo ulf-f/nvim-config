@@ -7,6 +7,8 @@
 - Download _Hack Nerd Font_ from www.nerdfonts.com
 - Unzip Hack.zip
 
+## Copy all font files over
+
     cp *.ttf ~/.local/share/fonts/NerdFonts
 
 ## Install font config
